@@ -1,0 +1,190 @@
+<html>
+<style>
+@font-face {
+font-family: frutiger;
+src: url(Frutiger.ttf);
+font-weight: normal;
+}
+@font-face {
+    font-family: frutigerbold;
+    src: url(Frutiger_bold.ttf);
+    font-weight: normal;
+}
+body {
+    font-family: frutiger; margin: 0; background-color: white;
+}
+.hoofdbalk {
+    background-color: #000090;
+    color: white;
+    min-height: 4%;
+    overflow: hidden;
+}
+.hoofdbalk a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2% 2%;
+    font-size: 20px;
+}
+.logo {
+    height: 5%;
+    float: left;
+    padding: 0.2%;
+    align-content: center;
+}
+.img1 {
+    background-image: url('img1.jpg');
+}
+.img2 {
+    background-image: url('img2.png');
+}
+.img3 {
+    background-image: url('img3.png');
+}
+.img4 {
+    background-image: url('img4.png');
+}
+.img5 {
+    background-image: url('img5.png');
+}
+.img6 {
+    background-image: url('img6.png');
+}
+.img7 {
+    background-image: url('img7.png');
+}
+.img8 {
+    background-image: url('img8.png');
+}
+.img9 {
+    background-image: url('img9.png');
+}
+.img10 {
+    background-image: url('img10.png');
+}
+.img11 {
+    background-image: url('img11.png');
+}
+select {
+    background-color: white;
+    font-family: frutiger;
+    text-align: center;
+    font-size: 20px;
+}
+button {
+    background-color: white;
+    font-family: frutiger;
+    text-align: center;
+    font-size: 20px;
+}
+.titel {
+    font-size: 45pt;
+    padding-left: 20%;
+    font-family: frutigerbold;
+    color: black;
+}
+h1 {
+    font-family: frutigerbold;
+}
+.titeltekst {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.1%;
+
+}
+.blok {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.stationkiezer {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10%;
+}
+.stationkiezerinhoud {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.1%;
+}
+.onzichtbaar {
+    display: none;
+}
+
+</style>
+<head>
+    <title>Waterstadse Spoorwegen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="hoofdbalk">
+    <img src="logo.png" class="logo">
+    <a>Reisplanner</a>
+    <a>Vertrektijden</a>
+    <a>Reisinformatie</a>
+    <a>Over ons</a>
+</div>
+</head>
+<body class="img img11">
+<div class="titel" style="padding-top: 2%;"><a class="titeltekst">Veilig, gemakkelijk en snel door Waterstad.</a></div>
+<div class="titel" style="padding-top: 0.2%"><a class="titeltekst">Welkom bij de Waterstadse Spoorwegen!</a></div>
+<div class="stationkiezer"><div class="stationkiezerinhoud">
+    <h1>Bekijk de vertrektijden van een station:</h1>
+    <select id="stationskeuze" onchange="stationsKeuze()">
+        <option value="0">Selecteer een station</option>
+        <option value="1">Savannemeer</option>
+        <option value="2">Manege Centraal</option>
+        <option value="3">Gerritsertrog</option>
+        <option value="4">Ruijstunnels</option>
+        <option value="5">Manege West</option>
+        <option value="5">Manege Noord</option>
+        <option value="6">Waterstad Centraal</option>
+    </select>
+    <button id="Sm" class="knop onzichtbaar" onclick="document.location = 'Sm.html'">Bekijk</button>
+    <button id="Mc" class="knop onzichtbaar" onclick="document.location = 'Mc.html'">Bekijk</button>
+    <button id="Gt" class="knop onzichtbaar" onclick="document.location = 'Gt.html'">Bekijk</button>
+    <button id="Rt" class="knop onzichtbaar" onclick="document.location = 'Rt.html'">Bekijk</button>
+    <button id="Mw" class="knop onzichtbaar" onclick="document.location = 'Mw.html'">Bekijk</button>
+    <button id="Mn" class="knop onzichtbaar" onclick="document.location = 'Mn.html'">Bekijk</button>
+    <button id="Wc" class="knop onzichtbaar" onclick="document.location = 'Wc.html'">Bekijk</button>
+</div></div>
+</body>
+<script>
+ var achtergrond = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11']
+        achterGrond(0);
+        function achterGrond(j) {
+            if (achtergrond.length > j) {
+             setTimeout(function() {
+                var i;
+                var elementen = document.getElementsByClassName('img')
+                for (i = 0; i < elementen.length; i++) {
+                elementen[i].classList.remove('img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11');
+                elementen[i].classList.add(achtergrond[j]);}
+                 achterGrond(++j);
+             }, 15000); // 1 second (in milliseconds)
+
+            } else if (achtergrond.length == j) { // Loop
+                achterGrond(0);
+            }}
+        function stationsKeuze() {
+            document.getElementById('Sm').classList.add('onzichtbaar')
+            document.getElementById('Mc').classList.add('onzichtbaar')
+            document.getElementById('Gt').classList.add('onzichtbaar')
+            document.getElementById('Rt').classList.add('onzichtbaar')
+            document.getElementById('Mw').classList.add('onzichtbaar')
+            document.getElementById('Mn').classList.add('onzichtbaar')
+            document.getElementById('Wc').classList.add('onzichtbaar')
+            var station = document.getElementById('stationskeuze')
+            var keuze = station.options[station.selectedIndex].text;
+                if (keuze == 'Savannemeer') {
+                document.getElementById('Sm').classList.remove('onzichtbaar')}
+                if (keuze == 'Manege Centraal') {
+                document.getElementById('Mc').classList.remove('onzichtbaar')}
+                if (keuze == 'Gerritsertrog') {
+                document.getElementById('Gt').classList.remove('onzichtbaar')}
+                if (keuze == 'Ruijstunnels') {
+                document.getElementById('Rt').classList.remove('onzichtbaar')}
+                if (keuze == 'Manege West') {
+                document.getElementById('Mw').classList.remove('onzichtbaar')}
+                if (keuze == 'Manege Noord') {
+                document.getElementById('Mn').classList.remove('onzichtbaar')}
+                if (keuze == 'Waterstad Centraal') {
+                document.getElementById('Wc').classList.remove('onzichtbaar')}
+            }
+
+</script>
+</html>
