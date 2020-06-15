@@ -1,0 +1,210 @@
+@font-face {
+    font-family: frutiger;
+    src: url(Frutiger.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: frutigerbold;
+    src: url(Frutiger_bold.ttf);
+    font-weight: normal;
+}
+body {font-family: frutiger; margin: 0; background-color: white; color: #000090;}
+.vervalt {
+    color: #9090dd;
+}
+.importantbg {
+    background-color: #ffe785;
+}
+.streep {
+    color: #9090dd;
+    text-decoration: line-through;
+}
+.WG {
+    font-size: 24;
+    background-color: white;
+    border-width: 2px;
+    border-color: black;
+}
+.WK {
+    font-size: 16;
+    background-color: white;
+    min-height: 22px;
+}
+.BG {
+    font-size: 24;
+    background-color: #d5e5ff;
+}
+.BK {
+    font-size: 16;
+    background-color: #d5e5ff;
+    min-height: 22px;
+}
+.K {
+    font-size: 16;
+    min-height: 22px;
+}
+.table {
+    width: 100%;
+    /*color: #000090;*/
+    
+}
+.w1 {
+    /*width: 10%;*/
+    width: 14%;
+    font-family: frutigerbold;
+    text-align: center;
+}
+.wz1 {
+    /*width: 10%;*/
+    width: 14%;
+    font-family: frutigerbold;
+    text-align: center;
+    color: #9090dd;
+}
+.w2 {
+    /*width: 60%;*/
+    width: 65%;
+    font-family: frutigerbold;
+}
+.wz2 {
+    /*width: 60%;*/
+    width: 65%;
+    font-family: frutigerbold;
+    color: #9090dd;
+}
+.w3 {
+    /*width: 3.44%;*/
+    width: 7%;
+    font-family: frutigerbold;
+    text-align: center;
+}
+.wz3 {
+    /*width: 3.44%;*/
+    width: 7%;
+    font-family: frutigerbold;
+    text-align: center;
+    color: #9090dd;
+}
+.w4 {
+    /*width: 10%;*/
+    width: 14%;
+
+}
+.wz4 {
+    /*width: 10%;*/
+    width: 14%;
+    color: #9090dd;
+
+}
+.w5 {
+    /*width: 11.56%;*/
+    width: 0%;
+}
+.w6 {
+    /*width: 5%;*/
+    width: 0%;
+}
+.wd1 {
+    /*width: 10%;*/
+    width: 14%;
+    /*color: #000090;*/
+    text-align: center;
+}
+.wd2 {
+    /*width: 60%;*/
+    width: 65%;
+}
+.wdz2 {
+    /*width: 60%;*/
+    width: 65%;
+    color: #9090dd;
+}
+.wd3 {
+    /*width: 3.44%;*/
+    width: 7%;
+}
+.wd4 {
+    /*width: 10%;*/
+    width: 14%;
+}
+.wd5 {
+    /* width: 11.56%; */
+    width: 0%;
+}
+.wd6 {
+   /* width: 5%; */
+    width: 0%;
+}
+.important {
+    background-color: #000090;
+    color: white;
+}
+.none {
+    color: #9090dd;
+}
+
+.titel {
+    font-size: 16;
+    background-color: #000090;
+    font-family: frutigerbold;
+    color: white;
+}
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: 100%;    }
+    50%{    color: 100%; }
+    50%{    color: transparent; }
+    50%{    color: transparent; }
+    100%{   color: 100%; }
+}
+.blinking2{
+    animation:blinkingText2 2s infinite;
+}
+@keyframes blinkingText2{
+    0%{     color: #000090;    }
+    49.99%{    color: #000090; }
+    50%{    color: transparent; }
+    99.99%{    color: transparent; }
+}
+.welkom{
+    font-size: 48;
+    font-family: frutigerbold;
+    background-color: #000090;
+    color: white;
+}
+.tijd{
+    font-size: 48;
+    font-family: frutigerbold;
+    background-color: white;
+    color: #000090;
+}
+.spoor{
+    position: relative;
+    top: 10px;
+    border-style: solid;
+    border-color: #000090;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+.storing-titel {
+    font-size: 24;
+    font-family: frutigerbold;
+    background-color: #ffde59;
+    color: #d50000;
+}
+.storing-subtitel {
+    font-size: 16;
+    font-family: frutigerbold;
+    background-color: #ffde59;
+    color: #d50000;
+}
+.storing-text {
+    font-size: 16;
+    background-color: #ffde59;
+    color: #d50000;
+}
