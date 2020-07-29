@@ -1,0 +1,274 @@
+<html>
+<head><link type="text/css" rel="stylesheet" href="dienstregeling.css"></head>
+<body onload='tijd(), uniekNummer(), onregelmatigheden()'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="welkom">Het is <a id="uur" class="tijd"></a><a id="uur" class="tijd blinking2">:</a><a id="minuut" class="tijd"></a></div>
+<div class="welkom">Welkom op station <a onclick="document.location = 'index.html'" class="tijd">Sudport</a> </div>
+<div class="titel" name="titel"><table class="table titel"><tr>
+    <td class="w1">Vertrektijd</th>
+    <td class="w2">Bestemming / Opmerkingen</th>
+    <td class="w3">Spoor</th>
+    <td class="w4">Soort en info</th>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="A A00 FR2 1-FR2 R2 M00 "><table class="table WG"><tr>
+    <td class="D00 w1"><a class="h"></a>:00</td>
+    <td class="w2 DFR2 1-FR2 R2 M00 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR2 1-FR2 R2 S00">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B00 FR2 1-FR2 R2 M00 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C00 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A01 FR1 1-FR1 R1 M01 "><table class="table BG"><tr>
+    <td class="D01 w1"><a class="h"></a>:01</td>
+    <td class="w2 DFR1 1-FR1 R1 M01">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 1-FR1 R2 S01">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B01 FR1 1-FR1 R1 M01 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C01 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A16 FR2 1-FR2 R2 M16 "><table class="table WG"><tr>
+    <td class="D16 w1"><a class="h"></a>:16</td>
+    <td class="w2 DFR2 1-FR2 R2 M16 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR2 1-FR2 R2 S16">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B16 FR2 1-FR2 R2 M16 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C16 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A16 FR1 1-FR1 R1 M16 "><table class="table BG"><tr>
+    <td class="D16 w1"><a class="h"></a>:16</td>
+    <td class="w2 DFR1 1-FR1 R1 M16">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 1-FR1 R2 S16">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B16 FR1 1-FR1 R1 M16 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C16 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A30 FR2 1-FR2 R2 M30 "><table class="table WG"><tr>
+    <td class="D30 w1"><a class="h"></a>:30</td>
+    <td class="w2 DFR2 1-FR2 R2 M30 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR2 1-FR2 R2 S30">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B30 FR2 1-FR2 R2 M30 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C30 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A31 FR1 1-FR1 R1 M31 "><table class="table BG"><tr>
+    <td class="D31 w1"><a class="h"></a>:31</td>
+    <td class="w2 DFR1 1-FR1 R1 M31">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 1-FR1 R2 S31">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B31 FR1 1-FR1 R1 M31 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C31 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A46 FR2 1-FR2 R2 M46 "><table class="table WG"><tr>
+    <td class="D46 w1"><a class="h"></a>:46</td>
+    <td class="w2 DFR2 1-FR2 R2 M46 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR2 1-FR2 R2 S46">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B46 FR2 1-FR2 R2 M46 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C46 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A46 FR1 1-FR1 R1 M46 "><table class="table BG"><tr>
+    <td class="D46 w1"><a class="h"></a>:46</td>
+    <td class="w2 DFR1 1-FR1 R1 M46">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 1-FR1 R2 S46">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B46 FR1 1-FR1 R1 M46 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C46 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A00 FR2 2-FR2 R2 M00 "><table class="table WG"><tr>
+    <td class="D00 w1"><a class="2-h"></a>:00</td>
+    <td class="w2 DFR2 2-FR2 R2 M00 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR2 2-FR2 R2 S00">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B00 FR2 2-FR2 R2 M00 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C00 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A01 FR1 2-FR1 R1 M01 "><table class="table BG"><tr>
+    <td class="D01 w1"><a class="2-h"></a>:01</td>
+    <td class="w2 DFR1 2-FR1 R1 M01">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 2-FR1 R2 S01">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B01 FR1 2-FR1 R1 M01 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C01 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A16 FR2 2-FR2 R2 M16 "><table class="table WG"><tr>
+    <td class="D16 w1"><a class="2-h"></a>:16</td>
+    <td class="w2 DFR2 2-FR2 R2 M16 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR2 2-FR2 R2 S16">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B16 FR2 2-FR2 R2 M16 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C16 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A16 FR1 2-FR1 R1 M16 "><table class="table BG"><tr>
+    <td class="D16 w1"><a class="2-h"></a>:16</td>
+    <td class="w2 DFR1 2-FR1 R1 M16">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 2-FR1 R2 S16">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B16 FR1 2-FR1 R1 M16 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C16 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A30 FR2 2-FR2 R2 M30 "><table class="table WG"><tr>
+    <td class="D30 w1"><a class="2-h"></a>:30</td>
+    <td class="w2 DFR2 2-FR2 R2 M30 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR2 2-FR2 R2 S30">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B30 FR2 2-FR2 R2 M30 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C30 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A31 FR1 2-FR1 R1 M31 "><table class="table BG"><tr>
+    <td class="D31 w1"><a class="2-h"></a>:31</td>
+    <td class="w2 DFR1 2-FR1 R1 M31">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 2-FR1 R2 S31">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B31 FR1 2-FR1 R1 M31 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C31 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A46 FR2 2-FR2 R2 M46 "><table class="table WG"><tr>
+    <td class="D46 w1"><a class="2-h"></a>:46</td>
+    <td class="w2 DFR2 2-FR2 R2 M46 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR2 2-FR2 R2 S46">1</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B46 FR2 2-FR2 R2 M46 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C46 wd2">via Suffor&#x000EA;t, Leusden Praire For&#x000EA;t en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A 2-A46 FR1 2-FR1 R1 M46 "><table class="table BG"><tr>
+    <td class="D46 w1"><a class="2-h"></a>:46</td>
+    <td class="w2 DFR1 2-FR1 R1 M46">Gendte</td>
+    <td class="w3"><a class="spoor SFR1 2-FR1 R2 S46">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B 2-B46 FR1 2-FR1 R1 M46 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C46 wd2">via Leusden, Nouveau Paris Central en Formarais</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+</body><script type="text/javascript" src="dienstregelingFR.js"></script>
+
+</script>
+</html>

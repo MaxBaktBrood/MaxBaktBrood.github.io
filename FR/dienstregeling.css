@@ -191,6 +191,18 @@ body {font-family: frutiger; margin: 0; background-color: white; color: #000090;
     padding-bottom: 5px;
     background-color: white;
 }
+.spoorrood{
+    position: relative;
+    top: 10px;
+    border-style: solid;
+    border-color: #d50000;
+    color: #d50000;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
 .storing-titel {
     font-size: 24;
     font-family: frutigerbold;

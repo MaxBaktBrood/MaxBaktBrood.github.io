@@ -2489,7 +2489,6 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
 //            return i;
 //       }
         }
-
         function onregelmatigheden() {
 
         // Met deze functie kunt u onregelmatigheden doorvoeren in de dienstregeling!
@@ -2497,19 +2496,33 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
         // - De lijnnummers (Bijvoorbeeld FR999)
         // - De richting (R1 voor noord/west, R2 voor zuid/oost)
         // - De uren waarin de treinen onregelmatigheden meemaken (bijvoorbeeld H1, H10...)
-        var onregelmatigheid = 'R2//'
-        var onregelmatigheid2 = 'R1//'
+        var onregelmatigheid = '1-FR2 R1 H21'
+        var onregelmatigheid2 = '2-FR1'
+        var spoorwijziging = '1-FR2 R1'
         // Vul een '1' in bij de toe te passen maatregel:
+        var gewijzigd_vertrekspoor = 10
         var rijdt_niet = 0
-            var rijdt_niet_verder_dan = 0
+            var rijdt_niet_verder_dan = 1
             //Wat is de nieuwe bestemming?
-            var oudebestemming = "Sudport"
-            var nieuwebestemming = "Leusden Praire Foret"
+            var oudebestemming = "Nouveau Paris Central"
+            var nieuwebestemming = "Nouveau Paris Central"
+            var nieuw_vertrekspoor = "1b"
 
-        var bericht = "Rijdt niet door een defecte spoorbrug."
-        var bericht2 = "Rijdt niet door herstelwerkzaamheden." //"Rijdt niet door beperkingen in de matrieelinzet"
+        var bericht = "Rijdt niet verder dan Nouveau Paris Central door werkzaamheden."
+        var bericht2 = "Rijdt niet verder dan Nouveau Paris Central door werkzaamheden." //"Rijdt niet door beperkingen in de matrieelinzet"
         //var aangepaste_route = 0
-
+        if (gewijzigd_vertrekspoor == 1) {
+            var doel = document.getElementsByClassName(spoorwijziging + " spoor")
+            var i;
+            for (i = 0; i < doel.length; i++) {
+            //if (i.indexOf('table WK') !== -1) {
+            doel[i].innerHTML = nieuw_vertrekspoor;
+           }
+           for (i = 0; i < doel.length; i++) {
+            //if (i.indexOf('table WK') !== -1) {
+            doel[i].classList.add("spoorrood")
+            //doel[i].classList.remove("spoor")
+           }}
         //var klassen_onregelmatigheid = document.getElementsByClassName(onregelmatigheid);
         if (rijdt_niet = 1) {
             var tekst = document.getElementsByClassName(onregelmatigheid + " B ")
@@ -2564,7 +2577,35 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                    //}
                 //}    
             }
+            var elementen_roltekst = document.getElementsByClassName("C FR3a")
+            var elementen_roltekst2 = document.getElementsByClassName("C FR3a")
+            var normaletekst = elementen_roltekst.innerHTML[1];
+            var normaletekst2 = elementen_roltekst2.innerHTML[1];
+            var roltekst = [normaletekst , "Reistip: Naar Châteauville/Tourlonge/Tourlonge Est is sneller via de IC Nouveau Paris Nord."]
+            var roltekst2 = [normaletekst2 , "Reistip: Naar Châteauville/Tourlonge/Tourlonge Est is sneller via de IC Nouveau Paris Nord."]
+            var i;
+            rollendeTekst(0);
+               function rollendeTekst (y) {
+                   if (roltekst.length > y) {
+                       setTimeout(function() {
+                       rollendetekst = roltekst[y];
+                       rollendetekst2 = roltekst2[y];
+                       rollendeTekst(++i);
+                   }, 5000);
+                   } else if (example.length == y) { // Loop
+                       //example.length == i
+                           rollendeTekst(0);
+                       }
+               }
+            for (i = 0; i < elementen_roltekst.length; i++) {
+
+                elementen_roltekst[i].innerHTML = rollendetekst
+                elementen_roltekst2[i].innerHTML = rollendetekst2
+               }
+               
+
 
 
 
         }}
+        

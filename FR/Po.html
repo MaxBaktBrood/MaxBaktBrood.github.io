@@ -1,0 +1,398 @@
+<html>
+<head><link type="text/css" rel="stylesheet" href="dienstregeling.css"></head>
+<body onload='tijd(), uniekNummer(), onregelmatigheden()'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="welkom">Het is <a id="uur" class="tijd"></a><a id="uur" class="tijd blinking2">:</a><a id="minuut" class="tijd"></a></div>
+<div class="welkom">Welkom op station <a onclick="document.location = 'index.html'" class="tijd">Portail de l'Ouest</a> </div>
+<div class="titel" name="titel"><table class="table titel"><tr>
+    <td class="w1">Vertrektijd</th>
+    <td class="w2">Bestemming / Opmerkingen</th>
+    <td class="w3">Spoor</th>
+    <td class="w4">Soort en info</th>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="A A03 FR4 1-FR4 R2 M03 "><table class="table WG"><tr>
+    <td class="D03 w1"><a class="h"></a>:03</td>
+    <td class="w2 DFR4 1-FR4 R2 M03 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R2 S03">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B03 FR4 1-FR4 R2 M03 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C03 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A06 FR4 1-FR4 R1 M06 "><table class="table BG"><tr>
+    <td class="D06 w1"><a class="h"></a>:06</td>
+    <td class="w2 DFR4 1-FR4 R1 M06">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R1 S06">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B06 FR4 1-FR4 R1 M06 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C06 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A08 FR3a 1-FR3a R2 M08 "><table class="table WG"><tr>
+    <td class="D08 w1"><a class="h"></a>:08</td>
+    <td class="w2 DFR3a 1-FR3a R2 M08 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR4 1-FR3a R2 S08">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B08 FR3a 1-FR3a R2 M08 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C08 wd2 FR3a 1-FR3a R2 M08 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+<div class="A A18 FR4 1-FR4 R2 M18 "><table class="table BG"><tr>
+    <td class="D18 w1"><a class="h"></a>:18</td>
+    <td class="w2 DFR4 1-FR4 R2 M18 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R2 S18">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B18 FR4 1-FR4 R2 M18 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C18 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A21 FR4 1-FR4 R1 M21 "><table class="table WG"><tr>
+    <td class="D21 w1"><a class="h"></a>:21</td>
+    <td class="w2 DFR4 1-FR4 R1 M21">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R1 S21">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B21 FR4 1-FR4 R1 M21 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C21 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A23 FR3b 1-FR3b R2 M23 "><table class="table BG"><tr>
+    <td class="D23 w1"><a class="h"></a>:23</td>
+    <td class="w2 DFR3b 1-FR3b R2 M23 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR4 1-FR3b R2 S23">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B23 FR3b 1-FR3b R2 M23 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C23 wd2 FR3b 1-FR3b R2 M23 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A33 FR4 1-FR4 R2 M33 "><table class="table WG"><tr>
+    <td class="D33 w1"><a class="h"></a>:33</td>
+    <td class="w2 DFR4 1-FR4 R2 M33 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R2 S33">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B33 FR4 1-FR4 R2 M33 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C33 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A36 FR4 1-FR4 R1 M36 "><table class="table BG"><tr>
+    <td class="D36 w1"><a class="h"></a>:36</td>
+    <td class="w2 DFR4 1-FR4 R1 M36">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R1 S36">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B36 FR4 1-FR4 R1 M36 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C36 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A38 FR3a 1-FR3a R2 M38 "><table class="table WG"><tr>
+    <td class="D38 w1"><a class="h"></a>:38</td>
+    <td class="w2 DFR3a 1-FR3a R2 M38 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR4 1-FR3a R2 S38">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B38 FR3a 1-FR3a R2 M38 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C38 wd2 FR3a 1-FR3a R2 M38 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+<div class="A A48 FR4 1-FR4 R2 M48 "><table class="table BG"><tr>
+    <td class="D48 w1"><a class="h"></a>:48</td>
+    <td class="w2 DFR4 1-FR4 R2 M48 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R2 S48">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B48 FR4 1-FR4 R2 M48 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C48 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A51 FR4 1-FR4 R1 M51 "><table class="table WG"><tr>
+    <td class="D51 w1"><a class="h"></a>:51</td>
+    <td class="w2 DFR4 1-FR4 R1 M51">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 1-FR4 R1 S51">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B51 FR4 1-FR4 R1 M51 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C51 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A A53 FR3b 1-FR3b R2 M53 "><table class="table BG"><tr>
+    <td class="D53 w1"><a class="h"></a>:53</td>
+    <td class="w2 DFR3b 1-FR3b R2  FR3b 1-FR3b R2 M53 CM53 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR4 1-FR3b R2 S53">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B B53 FR3b 1-FR3b R2 M53 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C53 wd2">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A03 FR4 2-FR4 R2 M03 "><table class="table WG"><tr>
+    <td class="D03 w1"><a class="2-h"></a>:03</td>
+    <td class="w2 DFR4 2-FR4 R2 M03 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R2 S03">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B03 FR4 2-FR4 R2 M03 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C03 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A06 FR4 2-FR4 R1 M06 "><table class="table BG"><tr>
+    <td class="D06 w1"><a class="2-h"></a>:06</td>
+    <td class="w2 DFR4 2-FR4 R1 M06">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R1 S06">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B06 FR4 2-FR4 R1 M06 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C06 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A08 FR3a 2-FR3a R2 M08 "><table class="table WG"><tr>
+    <td class="D08 w1"><a class="2-h"></a>:08</td>
+    <td class="w2 DFR3a 2-FR3a R2 M08 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR4 2-FR3a R2 S08">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B08 FR3a 2-FR3a R2 M08 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C08 wd2 FR3a 2-FR3a R2 M08 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+<div class="A 2-A18 FR4 2-FR4 R2 M18 "><table class="table BG"><tr>
+    <td class="D18 w1"><a class="2-h"></a>:18</td>
+    <td class="w2 DFR4 2-FR4 R2 M18 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R2 S18">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B18 FR4 2-FR4 R2 M18 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C18 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A21 FR4 2-FR4 R1 M21 "><table class="table WG"><tr>
+    <td class="D21 w1"><a class="2-h"></a>:21</td>
+    <td class="w2 DFR4 2-FR4 R1 M21">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R1 S21">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B21 FR4 2-FR4 R1 M21 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C21 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A23 FR3b 2-FR3b R2 M23 "><table class="table BG"><tr>
+    <td class="D23 w1"><a class="2-h"></a>:23</td>
+    <td class="w2 DFR3b 2-FR3b R2 M23 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR4 2-FR3b R2 S23">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B23 FR3b 2-FR3b R2 M23 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C23 wd2 FR3b 2-FR3b R2 M23 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A33 FR4 2-FR4 R2 M33 "><table class="table WG"><tr>
+    <td class="D33 w1"><a class="2-h"></a>:33</td>
+    <td class="w2 DFR4 2-FR4 R2 M33 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R2 S33">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B33 FR4 2-FR4 R2 M33 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C33 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A36 FR4 2-FR4 R1 M36 "><table class="table BG"><tr>
+    <td class="D36 w1"><a class="2-h"></a>:36</td>
+    <td class="w2 DFR4 2-FR4 R1 M36">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R1 S36">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B36 FR4 2-FR4 R1 M36 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C36 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A38 FR3a 2-FR3a R2 M38 "><table class="table WG"><tr>
+    <td class="D38 w1"><a class="2-h"></a>:38</td>
+    <td class="w2 DFR3a 2-FR3a R2 M38 ">G&#x000E9;n&#x000E9;rateur de Zombie</td>
+    <td class="w3"><a class="spoor SFR4 2-FR3a R2 S38">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B38 FR3a 2-FR3a R2 M38 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C38 wd2 FR3a 2-FR3a R2 M38 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden, Leusden Sud, Leusden, C&#x000F4;te Bois&#x000E9;e Sud, C&#x000F4;te Bois&#x000E9;e, Ch&#x000E2;teauville, Tourlonge en Tourlonge Est</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+<div class="A 2-A48 FR4 2-FR4 R2 M48 "><table class="table BG"><tr>
+    <td class="D48 w1"><a class="2-h"></a>:48</td>
+    <td class="w2 DFR4 2-FR4 R2 M48 ">Mer Nouveau</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R2 S48">3</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B48 FR4 2-FR4 R2 M48 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C48 wd2"></td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A51 FR4 2-FR4 R1 M51 "><table class="table WG"><tr>
+    <td class="D51 w1"><a class="2-h"></a>:51</td>
+    <td class="w2 DFR4 2-FR4 R1 M51">Berlin Hbf</td>
+    <td class="w3"><a class="spoor SFR4 2-FR4 R1 S51">2</a></td>
+    <td class="w4"><img src=""></img>Intercit&#x000E9;</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B51 FR4 2-FR4 R1 M51 "><table class="table WK"><tr>
+    <td class="wd1"></td>
+    <td class="C51 wd2">via Formarais, Nouveau Paris Central, G&#x000E9;n&#x000E9;rateur de Zombie en Arrecour</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+<div class="A 2-A53 FR3b 2-FR3b R2 M53 "><table class="table BG"><tr>
+    <td class="D53 w1"><a class="2-h"></a>:53</td>
+    <td class="w2 DFR3b 2-FR3b R2 M53 ">Leusden</td>
+    <td class="w3"><a class="spoor SFR4 2-FR3b R2 S53">1a</a></td>
+    <td class="w4"><img src=""></img>T.E. Regional</td>
+    <td class="w5"></td>
+    <td class="w6"></td>
+</tr></table></div>
+<div class="B 2-B53 FR3b 2-FR3b R2 M53 "><table class="table BK"><tr>
+    <td class="wd1"></td>
+    <td class="C53 wd2 FR3b 2-FR3b R2 M53 C">Via Deuxieme Village, Premier Village, Lac de Bouleau, River de Leusden en Leusden Sud</td>
+    <td class="wd3"></td>
+    <td class="wd4"></td>
+    <td class="wd5"></td>
+    <td class="wd6"></td>
+</tr></table></div>
+</body><script type="text/javascript" src="dienstregelingFR.js"></script>
+
+</script>
+</html>

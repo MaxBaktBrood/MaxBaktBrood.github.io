@@ -1,0 +1,101 @@
+<html>
+<style>
+@font-face {
+font-family: frutiger;
+src: url(Frutiger.ttf);
+font-weight: normal;
+}
+@font-face {
+    font-family: frutigerbold;
+    src: url(Frutiger_bold.ttf);
+    font-weight: normal;
+}
+body {
+    font-family: frutiger; margin: 0; background-color: white;
+}
+.hoofdbalk {
+    background-color: #000090;
+    color: white;
+    min-height: 4%;
+    overflow: hidden;
+}
+.hoofdbalk a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2% 2%;
+    font-size: 20px;
+}
+.logo {
+    height: 5%;
+    float: left;
+    padding: 0.2%;
+    align-content: center;
+}
+select {
+    background-color: white;
+    font-family: frutiger;
+    text-align: center;
+    font-size: 20px;
+}
+.titel {
+    font-size: 45pt;
+    padding-left: 20%;
+    font-family: frutigerbold;
+    color: black;
+}
+h1 {
+    font-family: frutigerbold;
+}
+.titeltekst {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.1%;
+
+}
+.blok {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.stationkiezer {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10%;
+}
+.stationkiezerinhoud {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.1%;
+}
+.onzichtbaar {
+    display: none;
+}
+
+</style>
+<body class="img img11">
+
+    <div class="titel" style="padding-top: 2%;"><a class="titeltekst"></a></div>
+    <div class="titel" style="padding-top: 0.2%"><a class="titeltekst"></a></div>
+    <div class="stationkiezer"><div class="stationkiezerinhoud">
+    <h1>Bekijk de vertrektijden van een station:</h1>
+    <select id="stationskeuze" onchange="stationsKeuze()">
+        <option value="0">Selecteer een station</option>
+        <option value="1">Leusden</option>
+        <option value="2">Sudport</option>
+        <option value="3">Portail de l'Ouest</option>
+<button id="Ld" class="knop onzichtbaar" onclick="document.location = 'Ld.html'">Bekijk</button>
+<button id="Sp" class="knop onzichtbaar" onclick="document.location = 'Sp.html'">Bekijk</button>
+<button id="Po" class="knop onzichtbaar" onclick="document.location = 'Po.html'">Bekijk</button>
+
+</body>
+<script>
+    function stationsKeuze() {
+var station = document.getElementById('stationskeuze')
+var keuze = station.options[station.selectedIndex].text;
+        if (keuze == 'Leusden') {
+        document.getElementById('Ld').classList.remove('onzichtbaar')}
+        if (keuze == 'Sudport') {
+        document.getElementById('Sp').classList.remove('onzichtbaar')}
+        if (keuze == 'Portail de l' + "'" + 'Ouest') {
+        document.getElementById('Po').classList.remove('onzichtbaar')}
+    }
+
+</script>
+</html>
