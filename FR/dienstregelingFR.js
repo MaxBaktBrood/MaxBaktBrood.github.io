@@ -337,7 +337,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 '<td class="wd6"></td>' +
                                                 '</tr></table></div>'}
             }}}
-            xmlhttp.open("GET", "http://localhost/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
+            xmlhttp.open("GET", "https://maxbaktbrood.github.io/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
             xmlhttp.send()
         }}}
         function onregelmatigheden() {
