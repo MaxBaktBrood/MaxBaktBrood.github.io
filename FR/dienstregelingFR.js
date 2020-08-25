@@ -125,7 +125,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             var t;
-                            var treinGegevens = JSON.parse(this.responseText);              //Verkrijg de inhoud van het doc                        
+                            var treinGegevens = JSON.parse(this.responseText);              //Verkrijg de inhoud van het doc                     
                             for (t = 0; t < treinGegevens.treinen.length; t++) {
                                 function tabel(i) {
                                     if (i % 2 == 0) {i = "W"
@@ -337,7 +337,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 '<td class="wd6"></td>' +
                                                 '</tr></table></div>'}
             }}}
-            xmlhttp.open("GET", "https://maxbaktbrood.github.io/FR/data/index.php?f=dienstregeling" + afkortingen[s] + ".json", true);
+            xmlhttp.open("GET", "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
             xmlhttp.send()
         }}}
         function onregelmatigheden() {
