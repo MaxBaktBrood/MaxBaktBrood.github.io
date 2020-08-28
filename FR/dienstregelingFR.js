@@ -109,8 +109,8 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
 
 
         function htmlMaker() {
-            var stations = ["Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central"]
-            var afkortingen = ["Np", "Gv", "Gc", "Gc", "Gc"]
+            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud"]
+            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", ""]
             var s;
             function eenUurLater(i) {
                 if (h = 23) { i = 0} else {i = h + 1}
@@ -132,7 +132,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                     } else {i = "B"}
                                     return i;
                                 }
-                                    if (treinGegevens.treinen[t].tussenstations != "") {
+                                    if (treinGegevens.treinen[t].tussenstations.length != 0) {
                                     var splitTussenstations = treinGegevens.treinen[t].tussenstations.split(", ")
                                     if (splitTussenstations.length > 1) {
                                         splitTussenstations.splice(0, 0, "via*")
@@ -147,9 +147,9 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                     if (splitTussenstations.length < 1) {
                                         var tussenstations = " "  }} else { var splitTussenstations = ""
                                     var tussenstations = ""}
-                            
-                                    if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet == "" && treinGegevens.treinen[t].nieuweBestemming == "") {
-                                        if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                    var leeg = "";
+                                    if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet.length == 0 && treinGegevens.treinen[t].nieuweBestemming.length == 0 && treinGegevens.treinen[t].bericht.length == 0) {
+                                        if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                             var spooropmaak = "spoorrood"
                                             } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                             var spooropmaak = "spoor"}
@@ -172,13 +172,13 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                         elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                         '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                         '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + tussenstations + '</td>' +
-                                        '<td class="wd3"></td>' +
+                                        '<td class="wd3" style="color: transparent;">Max</td>' +
                                         '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                         '<td class="wd5"></td>' +
                                         '<td class="wd6"></td>' +
                                         '</tr></table></div>'}
-                                    if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].rijdtNiet == "" && treinGegevens.treinen[t].nieuweBestemming == "") {
-                                        if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                    if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].rijdtNiet.length == 0 && treinGegevens.treinen[t].nieuweBestemming.length == 0 && treinGegevens.treinen[t].bericht.length == 0) {
+                                        if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                         var spooropmaak = "spoorrood"
                                         } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                         var spooropmaak = "spoor"}
@@ -201,13 +201,72 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                         elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                         '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                         '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + tussenstations + '</td>' +
-                                        '<td class="wd3"></td>' +
+                                        '<td class="wd3" style="color: transparent;">Max</td>' +
                                         '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                         '<td class="wd5"></td>' +
                                         '<td class="wd6"></td>' +
                                         '</tr></table></div>'}
-                                        if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet != ""  && treinGegevens.treinen[t].nieuweBestemming == "") {
-                                            if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                        if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet.length == 0 && treinGegevens.treinen[t].nieuweBestemming.length == 0 && treinGegevens.treinen[t].bericht.length != 0) {
+                                            if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                                var spooropmaak = "spoorrood"
+                                                } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
+                                                var spooropmaak = "spoor"}
+                                                var bericht = treinGegevens.treinen[t].bericht
+                                            var kleur = t;
+                                            var elementA = document.createElement('div');
+                                            document.getElementById('contents').appendChild(elementA);
+                                            elementA.className ="A A" + treinGegevens.treinen[t].vertrekminuut
+                                            elementA.innerHTML = 
+                                            '<table class="table ' + tabel(kleur) + 'G"><tr>' +
+                                            '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
+                                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
+                                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w5"></td>' +
+                                            '<td class="w6"></td>' +
+                                            '</tr></table></div>'
+                                            var elementB = document.createElement('div');
+                                            document.getElementById('contents').appendChild(elementB);
+                                            elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
+                                            elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
+                                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="trein' + t + '">Door een technische storing kunnen er geen tussenstations worden weergegeven.</td>' +
+                                            '<td class="wd3" style="color: transparent;">Max</td>' +
+                                            '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
+                                            '<td class="wd5"></td>' +
+                                            '<td class="wd6"></td>' +
+                                            '</tr></table></div>'}
+                                        if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].rijdtNiet.length == 0 && treinGegevens.treinen[t].nieuweBestemming.length == 0 && treinGegevens.treinen[t].bericht.length != 0) {
+                                            if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                            var spooropmaak = "spoorrood"
+                                            } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
+                                            var spooropmaak = "spoor"}
+                                            var kleur = t;
+                                            var elementA = document.createElement('div');
+                                            document.getElementById('contents2').appendChild(elementA);
+                                            elementA.className ="A 2-A" + treinGegevens.treinen[t].vertrekminuut
+                                            elementA.innerHTML = 
+                                            '<table class="table ' + tabel(kleur) + 'G"><tr>' +
+                                            '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
+                                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
+                                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w5"></td>' +
+                                            '<td class="w6"></td>' +
+                                            '</tr></table></div>'
+                                            var elementB = document.createElement('div');
+                                            document.getElementById('contents2').appendChild(elementB);
+                                            elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
+                                            elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
+                                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + tussenstations + '</td>' +
+                                            '<td class="wd3" style="color: transparent;">Max</td>' +
+                                            '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
+                                            '<td class="wd5"></td>' +
+                                            '<td class="wd6"></td>' +
+                                            '</tr></table></div>'}
+                                        if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet.length != 0  && treinGegevens.treinen[t].nieuweBestemming.length == 0) {
+                                            if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                                 var spooropmaak = "spoorrood"
                                                 } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                                 var spooropmaak = "spoor"}
@@ -224,7 +283,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
-                                            if (treinGegevens.treinen[t].bericht == "") {
+                                            if (treinGegevens.treinen[t].bericht.length == 0) {
                                                 treinbericht = "Deze trein rijdt niet"
                                             } else { treinbericht = treinGegevens.treinen[t].bericht}
                                             var mededeling = [tussenstations, treinbericht]
@@ -239,8 +298,8 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                             '<td class="wd5"></td>' +
                                             '<td class="wd6"></td>' +
                                             '</tr></table></div>'}
-                                        if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].rijdtNiet != ""  && treinGegevens.treinen[t].nieuweBestemming == "") {
-                                            if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                        if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].rijdtNiet.length != 0  && treinGegevens.treinen[t].nieuweBestemming.length == 0) {
+                                            if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                                 var spooropmaak = "spoorrood"
                                                 } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                                 var spooropmaak = "spoor"}
@@ -257,7 +316,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
-                                            if (treinGegevens.treinen[t].bericht == "") {
+                                            if (treinGegevens.treinen[t].bericht.length == 0) {
                                                 treinbericht = "Deze trein rijdt niet"
                                             } else { treinbericht = treinGegevens.treinen[t].bericht}
                                             var elementB = document.createElement('div');
@@ -271,8 +330,8 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                             '<td class="wd5"></td>' +
                                             '<td class="wd6"></td>' +
                                             '</tr></table></div>'}
-                                            if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].nieuweBestemming != "") {
-                                                if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                            if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].nieuweBestemming.length != 0) {
+                                                if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                                     var spooropmaak = "spoorrood"
                                                     } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                                     var spooropmaak = "spoor"}
@@ -289,7 +348,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
-                                                if (treinGegevens.treinen[t].bericht == "") {
+                                                if (treinGegevens.treinen[t].bericht.length == 0) {
                                                     treinbericht = "Rijdt niet verder dan " + treinGegevens.treinen[t].nieuweBestemming
                                                 } else { treinbericht = treinGegevens.treinen[t].bericht}
                                                 var mededeling = [tussenstations, treinbericht]
@@ -299,13 +358,13 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                                 '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2 important">' + mededeling[1] + '</td>' +
-                                                '<td class="wd3"></td>' +
+                                                '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
                                                 '<td class="wd6"></td>' +
                                                 '</tr></table></div>'}
-                                            if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].nieuweBestemming != "") {
-                                                if (treinGegevens.treinen[t].nieuwVertrekspoor != "") {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
+                                            if (treinGegevens.treinen[t].vertrekuur == hPlusEen && treinGegevens.treinen[t].nieuweBestemming != leeg) {
+                                                if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                                     var spooropmaak = "spoorrood"
                                                     } else {var vertrekspoor = treinGegevens.treinen[t].vertrekspoor
                                                     var spooropmaak = "spoor"}
@@ -322,7 +381,7 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
-                                                if (treinGegevens.treinen[t].bericht == "") {
+                                                if (treinGegevens.treinen[t].bericht.length == 0) {
                                                     treinbericht = "Rijdt niet verder dan " + treinGegevens.treinen[t].nieuweBestemming
                                                 } else { treinbericht = treinGegevens.treinen[t].bericht}
                                                 var elementB = document.createElement('div');
@@ -331,15 +390,29 @@ var myVar = setInterval(showHideInfo, onregelmatigheden, 500)
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                                 '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2 important">' + treinbericht + '</td>' +
-                                                '<td class="wd3"></td>' +
+                                                '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
                                                 '<td class="wd6"></td>' +
                                                 '</tr></table></div>'}
-            }}}
+                            }
+                            for (u = 0; u < treinGegevens.treinen.length; u++) {
+                            var element = document.getElementById("trein" + u)
+                            if (element != null) {
+                            var info = [treinGegevens.treinen[u].bericht, tussenstations];
+                            document.getElementById("trein" + t).innerHTML = info[1]}
+                        }
+        
+        }}
             xmlhttp.open("GET", "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
             xmlhttp.send()
-        }}}
+        }}
+    var naam = document.getElementById("stationsnaam").innerHTML
+    if (naam.includes("â") == true) {
+        var aangepasteNaam = naam.replace("â", "&#226;")
+        document.getElementById("stationsnaam").innerHTML = aangepasteNaam
+}
+    }
         function onregelmatigheden() {
 
         // Met deze functie kunt u onregelmatigheden doorvoeren in de dienstregeling!

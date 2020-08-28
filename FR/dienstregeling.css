@@ -12,6 +12,10 @@ body {font-family: frutiger; margin: 0; background-color: white; color: #000090;
 .vervalt {
     color: #9090dd;
 }
+.geheim {
+    color: white;
+
+}
 .importantbg {
     background-color: #ffe785;
 }
@@ -29,7 +33,7 @@ body {font-family: frutiger; margin: 0; background-color: white; color: #000090;
     font-size: 16;
     background-color: white;
     min-height: 22px;
-    overflow: hidden;
+    
 }
 .BG {
     font-size: 24;
@@ -39,12 +43,12 @@ body {font-family: frutiger; margin: 0; background-color: white; color: #000090;
     font-size: 16;
     background-color: #d5e5ff;
     min-height: 22px;
-    overflow: hidden;
+    
 }
 .K {
     font-size: 16;
     min-height: 22px;
-    overflow: hidden;
+    
 }
 .table {
     width: 100%;
