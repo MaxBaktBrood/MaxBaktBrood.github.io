@@ -236,7 +236,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -265,7 +265,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -298,7 +298,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -330,7 +330,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -363,7 +363,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
@@ -395,7 +395,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '">Algo está errado com este metrô. As informações são recuperadas em 10 segundos.</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
@@ -422,8 +422,8 @@ var loop1 = setInterval(htmlAanpasser, 10000)
         document.getElementById("stationsnaam").innerHTML = aangepasteNaam}
     }
 function htmlAanpasser() {
-            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi"]
-            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "", "", ""]
+    var stations = ["Borba Gato", "Alto da Boa Vista"]
+    var afkortingen = ["Bg", "Av"]
             var s;
             for (s = 0; s < stations.length; s++) {
                 if (document.getElementById("stationsnaam").innerHTML == stations[s]) {var nummer = s}
@@ -457,7 +457,7 @@ function htmlAanpasser() {
                 }
         }
         }            
-        xmlhttp.open("GET", "/Sao_Paulo_Powered_By_Victor/data/dienstregeling" + afkortingen[s] + ".json", true);
+        xmlhttp.open("GET", "/Sao_Paulo_Powered_By_Victor/data/dienstregeling" + afkortingen[nummer] + ".json", true);
         xmlhttp.send()
     }
     function htmlAanpasser2() {
@@ -481,8 +481,8 @@ for (x = 0; x < treinGegevens.treinen.length; x++) {
     }
 }
 }          
-xmlhttp.open("GET", "/Sao_Paulo_Powered_By_Victor/data/dienstregeling" + afkortingen[s] + ".json", true);
-xmlhttp.send()
+        xmlhttp.open("GET", "/Sao_Paulo_Powered_By_Victor/data/dienstregeling" + afkortingen[nummer] + ".json", true);
+        xmlhttp.send()
 }
         function onregelmatigheden() {
 

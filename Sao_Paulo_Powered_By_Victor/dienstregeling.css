@@ -10,7 +10,7 @@
 }
 body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3B;}
 .vervalt {
-    color: #9090dd;
+    color: #e25555;
 }
 .geheim {
     color: #FFDF00;
@@ -20,7 +20,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     background-color: #ffe785;
 }
 .streep {
-    color: #9090dd;
+    color: #e25555;
     text-decoration: line-through;
 }
 .WG {
@@ -66,7 +66,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     width: 14%;
     font-family: frutigerbold;
     text-align: center;
-    color: #9090dd;
+    color: #e25555;
 }
 .w2 {
     /*width: 60%;*/
@@ -77,7 +77,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     /*width: 60%;*/
     width: 65%;
     font-family: frutigerbold;
-    color: #9090dd;
+    color: #e25555;
 }
 .w3 {
     /*width: 3.44%;*/
@@ -90,7 +90,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     width: 7%;
     font-family: frutigerbold;
     text-align: center;
-    color: #9090dd;
+    color: #e25555;
 }
 .w4 {
     /*width: 10%;*/
@@ -100,7 +100,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wz4 {
     /*width: 10%;*/
     width: 14%;
-    color: #9090dd;
+    color: #e25555;
 
 }
 .w5 {
@@ -130,7 +130,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     width: 14%;
     /*color: #009C3B;*/
     text-align: center;
-    color: #9090dd;
+    color: #e25555;
 }
 .wd2 {
     /*width: 60%;*/
@@ -139,7 +139,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wdz2 {
     /*width: 60%;*/
     width: 65%;
-    color: #9090dd;
+    color: #e25555;
 }
 .wd3 {
     /*width: 3.44%;*/
@@ -148,7 +148,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wdz3 {
     /*width: 3.44%;*/
     width: 7%;
-    color: #9090dd;
+    color: #e25555;
 }
 .wd4 {
     /*width: 10%;*/
@@ -157,7 +157,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wdz4 {
     /*width: 10%;*/
     width: 14%;
-    color: #9090dd;
+    color: #e25555;
 }
 .wd5 {
     /* width: 11.56%; */
@@ -166,7 +166,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wdz5 {
     /* width: 11.56%; */
     width: 0%;
-    color: #9090dd;
+    color: #e25555;
 }
 .wd6 {
    /* width: 5%; */
@@ -175,17 +175,17 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
 .wdz6 {
     /* width: 5%; */
      width: 0%;
-     color: #9090dd;
+     color: #e25555;
  }
 .important {
     background-color: #009C3B;
     color: #FFDF00;
 }
 .none {
-    color: #9090dd;
+    color: #e25555;
 }
 .oudebestemming {
-    color: #9090dd;
+    color: #e25555;
     text-decoration: line-through;
 }
 .titel {
@@ -240,7 +240,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     position: relative;
     top: 10px;
     border-style: solid;
-    border-color: #9090dd;
+    border-color: #e25555;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 5px;
@@ -264,7 +264,7 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     top: 10px;
     border-style: solid;
     border-color: #d50000;
-    color: #9090dd;
+    color: #e25555;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 5px;
