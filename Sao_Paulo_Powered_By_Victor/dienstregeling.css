@@ -16,6 +16,11 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     color: #FFDF00;
 
 }
+.vijf {
+    background-color: #b669ff;
+    color: white;
+    text-decoration: #b669ff;
+}
 .importantbg {
     background-color: #ffe785;
 }
@@ -234,7 +239,8 @@ body {font-family: frutiger; margin: 0; background-color: #FFDF00; color: #009C3
     padding-right: 8px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #FFDF00;
+    background-color: #002776;
+    color: FFDF00;
 }
 .geenspoor{
     position: relative;

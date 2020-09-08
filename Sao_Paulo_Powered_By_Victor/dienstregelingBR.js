@@ -166,7 +166,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         elementA.innerHTML = 
                                         '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                        '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                        '<td class="w2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
                                         '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
@@ -195,7 +195,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         elementA.innerHTML = 
                                         '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                        '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                        '<td class="w2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
                                         '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
@@ -225,7 +225,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementA.innerHTML = 
                                             '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="w2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
                                             '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
@@ -254,7 +254,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementA.innerHTML = 
                                             '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="w2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
                                             '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
@@ -283,7 +283,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementA.innerHTML = 
                                             '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                            '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="wz2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
                                             '<td class="wz4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
@@ -316,7 +316,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementA.innerHTML = 
                                             '<table class="table ' + tabel(kleur) + 'G"><tr>' +
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
-                                            '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                                            '<td class="wz2"><a class="vijf">Linha 5</a> ' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
                                             '<td class="wz4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
