@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+    
 <html>
 <style>
 @font-face {
@@ -12,6 +14,26 @@ font-weight: normal;
 }
 body {
     font-family: frutiger; margin: 0; background-color: white;
+}
+#stationszoeker {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #dddddd;
+}
+#stationskeuze {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#stationskeuze li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+#stationskeuze li a:hover {
+background-color: #eee;
 }
 .hoofdbalk {
     background-color: #000090;
@@ -69,33 +91,54 @@ h1 {
 }
 
 </style>
-<body class="img img11">
+<body class="img img11" onload="stationsGenerator()">
 
     <div class="titel" style="padding-top: 2%;"><a class="titeltekst"></a></div>
     <div class="titel" style="padding-top: 0.2%"><a class="titeltekst"></a></div>
     <div class="stationkiezer"><div class="stationkiezerinhoud">
     <h1>Bekijk de vertrektijden van een station:</h1>
-    <select id="stationskeuze" onchange="stationsKeuze()">
-        <option value="0">Selecteer een station</option>
-        <option value="1">Leusden</option>
-        <option value="2">Sudport</option>
-        <option value="3">Portail de l'Ouest</option>
-<button id="Ld" class="knop onzichtbaar" onclick="document.location = 'Ld.html'">Bekijk</button>
-<button id="Sp" class="knop onzichtbaar" onclick="document.location = 'Sp.html'">Bekijk</button>
-<button id="Po" class="knop onzichtbaar" onclick="document.location = 'Po.html'">Bekijk</button>
+    <input type="text" id="stationszoeker" onkeyup="stationsZoeker()" placeholder="Zoek een station..." title="Bekijk de vertrektijden van een station">
+    <ul id="stationskeuze">
+    </ul>
 
 </body>
 <script>
-    function stationsKeuze() {
-var station = document.getElementById('stationskeuze')
-var keuze = station.options[station.selectedIndex].text;
-        if (keuze == 'Leusden') {
-        document.getElementById('Ld').classList.remove('onzichtbaar')}
-        if (keuze == 'Sudport') {
-        document.getElementById('Sp').classList.remove('onzichtbaar')}
-        if (keuze == 'Portail de l' + "'" + 'Ouest') {
-        document.getElementById('Po').classList.remove('onzichtbaar')}
+    var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
+    var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po"]
+    function stationsGenerator() {
+        var s;
+        stations.sort();
+        afkortingen.sort();
+        for (s = 0; s < stations.length; s++) {
+            var element = document.createElement('li');
+            document.getElementById('stationskeuze').appendChild(element);
+            element.innerHTML = '<a href="http://' + window.location.host + "/FR/" + afkortingen[s] + '.html">' + stations[s] + "</a>" ;
+        }
+    
     }
+    function stationsZoeker() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("stationszoeker");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("stationskeuze");
+        li = ul.getElementsByTagName("li");
+        for (s = 0; s < li.length; s++) {
+            a = li[s].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[s].style.display = "";
+            } else {
+                li[s].style.display = "none";
+            }
+        }
+    }
+    function stationsKeuze() {
+    var station = document.getElementById('stationskeuze')
+    var keuze = station.options[station.selectedIndex].text;
+    var s;
+        for (s = 0; s < stations.length; s++) {
+            if (stations[s] == keuze) {
+                location.replace("http://" + window.location.host + "/FR/" + afkortingen[s] + ".html"); 
+            }}}
 
 </script>
 </html>

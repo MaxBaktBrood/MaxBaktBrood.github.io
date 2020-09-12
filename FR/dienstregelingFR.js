@@ -115,8 +115,8 @@ var loop1 = setInterval(htmlAanpasser, 10000)
 
 
         function htmlMaker() {
-            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi"]
-            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "", "", ""]
+            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
+            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po", "", ""]
             var s;
             function eenUurLater(i) {
                 if (h = 23) { i = 0} else {i = h + 1}
@@ -154,6 +154,12 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         var tussenstations = " "  }} else { var splitTussenstations = ""
                                     var tussenstations = ""}
                                     var leeg = "";
+                                    function logo() {
+                                    if (treinGegevens.treinen[t].soort == "T.E. Regional") {return "logoSNCF"}
+                                    if (treinGegevens.treinen[t].soort.startsWith("Intercit") == true) {return "logoSNCF"}
+                                    if (treinGegevens.treinen[t].soort == "ICE International") {return "logoDB"}
+                                    if (treinGegevens.treinen[t].soort == "BR Local Train") {return "logoBR"}
+                                    if (treinGegevens.treinen[t].soort == "Eurostar") {return "logoEUR"}}
                                     if (treinGegevens.treinen[t].vertrekuur == h && treinGegevens.treinen[t].rijdtNiet.length == 0 && treinGegevens.treinen[t].nieuweBestemming.length == 0 && treinGegevens.treinen[t].bericht.length == 0) {
                                         if (treinGegevens.treinen[t].nieuwVertrekspoor.length != 0) {var vertrekspoor = treinGegevens.treinen[t].nieuwVertrekspoor
                                             var spooropmaak = "spoorrood"
@@ -168,7 +174,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                         '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                        '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
                                         '<td class="w6"></td>' +
                                         '</tr></table></div>'
@@ -197,7 +203,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                         '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                        '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
                                         '<td class="w6"></td>' +
                                         '</tr></table></div>'
@@ -227,7 +233,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -236,7 +242,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -256,7 +262,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -265,7 +271,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -285,7 +291,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                            '<td class="wz4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -298,7 +304,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -318,7 +324,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                            '<td class="wz4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -330,7 +336,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                             '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                             '<td class="wd5"></td>' +
@@ -350,7 +356,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                                 '<td class="w2">' + treinGegevens.treinen[t].nieuweBestemming + ' <a class=oudebestemming>' + treinGegevens.treinen[t].bestemming + '</a></td>' +
                                                 '<td class="w3"><a class="' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                                '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
@@ -363,7 +369,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
@@ -383,7 +389,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                                 '<td class="w2">' + treinGegevens.treinen[t].nieuweBestemming + ' <a class=oudebestemming>' + treinGegevens.treinen[t].bestemming + '</a></td>' +
                                                 '<td class="w3"><a class="' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                                '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
@@ -395,7 +401,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
                                                 '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
-                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [] ' + tussenstations + '</td>' +
+                                                '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
                                                 '<td class="wd5"></td>' +
@@ -410,7 +416,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                         }
         
         }}
-            xmlhttp.open("GET", "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
+            xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
             xmlhttp.send()
         }}
     var naam = document.getElementById("stationsnaam").innerHTML
@@ -422,8 +428,8 @@ var loop1 = setInterval(htmlAanpasser, 10000)
         document.getElementById("stationsnaam").innerHTML = aangepasteNaam}
     }
 function htmlAanpasser() {
-            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi"]
-            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "", "", ""]
+            var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
+            var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po", "", ""]
             var s;
             for (s = 0; s < stations.length; s++) {
                 if (document.getElementById("stationsnaam").innerHTML == stations[s]) {var nummer = s}
@@ -457,12 +463,12 @@ function htmlAanpasser() {
                 }
         }
         }            
-        xmlhttp.open("GET", "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
+        xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
         xmlhttp.send()
     }
     function htmlAanpasser2() {
-        var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi"]
-        var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "", "", ""]
+        var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
+        var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po", "", ""]
         var s;
         for (s = 0; s < stations.length; s++) {
             if (document.getElementById("stationsnaam").innerHTML == stations[s]) {var nummer = s}
@@ -474,15 +480,15 @@ function htmlAanpasser() {
 for (x = 0; x < treinGegevens.treinen.length; x++) {
     var info = document.getElementById("treininfo" + x);
     if (info != null) {
-    if (treinGegevens.treinen[x].rijdtNiet != "" || treinGegevens.treinen[x].nieuweBestemming != "" || treinGegevens.treinen[x].nieuw_vertrekspoor != "") {
+    if (treinGegevens.treinen[x].rijdtNiet.length > 0 || treinGegevens.treinen[x].nieuweBestemming.length > 0 || treinGegevens.treinen[x].nieuwVertrekspoor.length > 0) {
         info.classList.add("important")
         }
     info.innerHTML = treinGegevens.treinen[x].bericht}
     }
 }
 }          
-xmlhttp.open("GET", "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
-xmlhttp.send()
+        xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
+        xmlhttp.send()
 }
         function onregelmatigheden() {
 
