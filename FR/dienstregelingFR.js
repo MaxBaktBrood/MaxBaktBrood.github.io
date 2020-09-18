@@ -15,6 +15,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
         if(minuut < t + 1) {
             var A00 =  document.getElementsByClassName('A' + nulErvoor(t));
             var B00 =  document.getElementsByClassName('B' + nulErvoor(t));
+            var E00 =  document.getElementsByClassName('E' + nulErvoor(t));
             for (i = 0; i < A00.length; i++) {
             A00[i].style.display='block';}
             for (i = 0; i < B00.length; i++) {
@@ -23,6 +24,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
         } else {
             var A00 =  document.getElementsByClassName('A' + nulErvoor(t));
             var B00 =  document.getElementsByClassName('B' + nulErvoor(t));
+            var E00 =  document.getElementsByClassName('E' + nulErvoor(t));
             for (i = 0; i < A00.length; i++) {
             A00[i].style.display='none';}
             for (i = 0; i < B00.length; i++) {
@@ -140,6 +142,12 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                 }
                                     if (treinGegevens.treinen[t].tussenstations.length != 0) {
                                     var splitTussenstations = treinGegevens.treinen[t].tussenstations.split(", ")
+                                    if (treinGegevens.treinen[t].nieuweBestemming.length != 0) {
+                                        for (p = 0; p < splitTussenstations.length; p++) {
+                                            if (splitTussenstations[p] == treinGegevens.treinen[t].nieuweBestemming) {
+                                                var verwijder = p;        
+                                            }}
+                                        } else {  if (treinGegevens.treinen[t].nieuweBestemming.length == 0) {var splitTussenstations = treinGegevens.treinen[t].tussenstations.split(", ")}}
                                     if (splitTussenstations.length > 1) {
                                         splitTussenstations.splice(0, 0, "via*")
                                         splitTussenstations.splice(splitTussenstations.length - 1, 0, "*en*")
@@ -150,8 +158,9 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         splitTussenstations.splice(0, 0, "via*")
                                         var tussenstations2 = splitTussenstations.join(", ")
                                         var tussenstations = tussenstations2.split('*,').join("")   }
-                                    if (splitTussenstations.length < 1) {
-                                        var tussenstations = " "  }} else { var splitTussenstations = ""
+                                    if (treinGegevens.treinen[t].tussenstations.length == 0) {
+                                        var tussenstations = " "  }
+                                    } else { var splitTussenstations = ""
                                     var tussenstations = ""}
                                     var leeg = "";
                                     function logo() {
@@ -174,7 +183,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                         '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
                                         '<td class="w6"></td>' +
                                         '</tr></table></div>'
@@ -182,7 +191,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         document.getElementById('contents').appendChild(elementB);
                                         elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                         elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                        '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                        '<td class="wd1 E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                         '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + tussenstations + '</td>' +
                                         '<td class="wd3" style="color: transparent;">Max</td>' +
                                         '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -203,7 +212,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                         '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                         '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                        '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                         '<td class="w5"></td>' +
                                         '<td class="w6"></td>' +
                                         '</tr></table></div>'
@@ -211,7 +220,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                         document.getElementById('contents2').appendChild(elementB);
                                         elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                         elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                        '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                        '<td class="wd1 2-E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                         '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + tussenstations + '</td>' +
                                         '<td class="wd3" style="color: transparent;">Max</td>' +
                                         '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -233,7 +242,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -241,7 +250,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             document.getElementById('contents').appendChild(elementB);
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="wd1 E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                             '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -262,7 +271,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="w3"><a class="' + spooropmaak + '">' + vertrekspoor + '</a></td>' +
-                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -270,7 +279,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             document.getElementById('contents2').appendChild(elementB);
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="wd1 2-E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                             '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wd3" style="color: transparent;">Max</td>' +
                                             '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -291,7 +300,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -303,7 +312,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             document.getElementById('contents').appendChild(elementB);
                                             elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                            '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="wdz1 E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                             '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -324,7 +333,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' wz1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                             '<td class="wz2">' + treinGegevens.treinen[t].bestemming + '</td>' +
                                             '<td class="wz3"><a class="geen' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                            '<td class="wz4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                             '<td class="w5"></td>' +
                                             '<td class="w6"></td>' +
                                             '</tr></table></div>'
@@ -335,7 +344,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                             document.getElementById('contents2').appendChild(elementB);
                                             elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                             elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                            '<td class="wdz1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                            '<td class="wdz1 2-E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                             '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                             '<td class="wdz3"></td>' +
                                             '<td class="wdz4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -356,7 +365,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                                 '<td class="w2">' + treinGegevens.treinen[t].nieuweBestemming + ' <a class=oudebestemming>' + treinGegevens.treinen[t].bestemming + '</a></td>' +
                                                 '<td class="w3"><a class="' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
@@ -368,7 +377,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 document.getElementById('contents').appendChild(elementB);
                                                 elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                                '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                                '<td class="wd1 E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                                 '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -389,7 +398,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
                                                 '<td class="w2">' + treinGegevens.treinen[t].nieuweBestemming + ' <a class=oudebestemming>' + treinGegevens.treinen[t].bestemming + '</a></td>' +
                                                 '<td class="w3"><a class="' + spooropmaak + '">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
-                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="http://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
+                                                '<td class="w4"><img class="logo" style="max-height: 12pt; max-width: 240pt;" src="https://' + window.location.host + '/FR/' + logo() + '.png"></img> ' + treinGegevens.treinen[t].soort + '</td>' +
                                                 '<td class="w5"></td>' +
                                                 '<td class="w6"></td>' +
                                                 '</tr></table></div>'
@@ -400,7 +409,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                                                 document.getElementById('contents2').appendChild(elementB);
                                                 elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
                                                 elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
-                                                '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                                                '<td class="wd1 2-E' + treinGegevens.treinen[t].vertrekminuut + '">' + treinGegevens.treinen[t].vertraging + '</td>' +
                                                 '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2" id="treininfo' + t + '"> [Meer reisinformatie binnen 10 seconden] ' + tussenstations + '</td>' +
                                                 '<td class="wd3" style="color: transparent;">Max</td>' +
                                                 '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
@@ -416,7 +425,7 @@ var loop1 = setInterval(htmlAanpasser, 10000)
                         }
         
         }}
-            xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
+            xmlhttp.open("GET", "https://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[s] + ".json", true);
             xmlhttp.send()
         }}
     var naam = document.getElementById("stationsnaam").innerHTML
@@ -426,7 +435,14 @@ var loop1 = setInterval(htmlAanpasser, 10000)
     if (naam.includes("Générateur") == true) {
         var aangepasteNaam = naam.replace("Générateur", "G" + "&#233;" + "n" +"&#233;" + "rateur")
         document.getElementById("stationsnaam").innerHTML = aangepasteNaam}
-    }
+    
+    if (document.getElementsByTagName("title").length == 0) {
+        var element = document.createElement('title');
+        var head = document.getElementsByTagName('head')
+        head[0].appendChild(element);
+        element.innerHTML = document.getElementById("stationsnaam").innerHTML + " - Vertrektijden - SNCF";
+    }}
+    
 function htmlAanpasser() {
             var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
             var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po", "", ""]
@@ -441,9 +457,18 @@ function htmlAanpasser() {
                     for (x = 0; x < treinGegevens.treinen.length; x++) {
                         var info = document.getElementById("treininfo" + x);
                         if (info != null) {
+                        if (treinGegevens.treinen[x].nieuweBestemming.length != 0) {
+                            var splits = treinGegevens.treinen[x].tussenstations.split(", ")
+                            for (p = 0; p < splits.length; p++) {
+                                if (splits[p] == treinGegevens.treinen[x].nieuweBestemming) {
+                                    var verwijder = p;        
+                                    var totaal = splits.length
+                                }}
+                            } else {var verwijder = treinGegevens.treinen[x].tussenstations.split(", ").length}
                         var splitTussenstations = treinGegevens.treinen[x].tussenstations.split(", ")
+                        if (splitTussenstations.length > 0) {splitTussenstations.splice(verwijder)}
                         if (splitTussenstations.length > 1) {
-                            splitTussenstations.splice(0, 0, "via*")
+                            splitTussenstations.splice(0, 0, "via*")    
                             splitTussenstations.splice(splitTussenstations.length - 1, 0, "*en*")
                             var tussenstations2 = splitTussenstations.join(", ")
                             var tussenstations3 = tussenstations2.split('*,').join("")   
@@ -452,8 +477,8 @@ function htmlAanpasser() {
                             splitTussenstations.splice(0, 0, "via*")
                             var tussenstations2 = splitTussenstations.join(", ")
                             var tussenstations = tussenstations2.split('*,').join("")   }
-                        if (splitTussenstations.length < 1) {
-                            var tussenstations = " "  }
+                        if (treinGegevens.treinen[x].tussenstations.length == 0) {
+                            var tussenstations = treinGegevens.treinen[x].bericht  }
                         if (treinGegevens.treinen[x].rijdtNiet.length != 0) {
                             info.classList.remove("wd2")
                             info.classList.add("wdz2")
@@ -463,7 +488,7 @@ function htmlAanpasser() {
                 }
         }
         }            
-        xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
+        xmlhttp.open("GET", "https://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
         xmlhttp.send()
     }
     function htmlAanpasser2() {
@@ -477,17 +502,31 @@ function htmlAanpasser() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var treinGegevens = JSON.parse(this.responseText);     
-for (x = 0; x < treinGegevens.treinen.length; x++) {
+    for (x = 0; x < treinGegevens.treinen.length; x++) {
     var info = document.getElementById("treininfo" + x);
     if (info != null) {
     if (treinGegevens.treinen[x].rijdtNiet.length > 0 || treinGegevens.treinen[x].nieuweBestemming.length > 0 || treinGegevens.treinen[x].nieuwVertrekspoor.length > 0) {
         info.classList.add("important")
         }
-    info.innerHTML = treinGegevens.treinen[x].bericht}
+    if (treinGegevens.treinen[x].bericht.length != 0) {
+        info.innerHTML = treinGegevens.treinen[x].bericht
+    } else {
+        if (treinGegevens.treinen[x].rijdtNiet.length != 0) {
+            if (treinGegevens.treinen[x].storingsoorzaak.length != 0) {
+            info.innerHTML = "Rijdt niet door een " + treinGegevens.treinen[x].storingsoorzaak
+        } else {info.innerHTML = "Rijdt niet"}}
+        if (treinGegevens.treinen[x].nieuweBestemming.length != 0) {
+            if (treinGegevens.treinen[x].storingsoorzaak.length != 0) {
+            info.innerHTML = "Rijdt niet verder dan " + treinGegevens.treinen[x].nieuweBestemming + " door een " + treinGegevens.treinen[x].storingsoorzaak.toLowerCase()
+            } else {info.innerHTML = "Rijdt niet verder dan " + treinGegevens.treinen[x].nieuweBestemming}
+        }
+        //if (treinGegevens.treinen[x].nieuwVertrekspoor.length != 0) {info.innerHTML = "Let op! Vertrekt van spoor " + treinGegevens.treinen[x].nieuwVertrekspoor}
+    }
+    }
     }
 }
 }          
-        xmlhttp.open("GET", "http://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
+        xmlhttp.open("GET", "https://" +  window.location.host  + "/FR/data/dienstregeling" + afkortingen[nummer] + ".json", true);
         xmlhttp.send()
 }
         function onregelmatigheden() {
