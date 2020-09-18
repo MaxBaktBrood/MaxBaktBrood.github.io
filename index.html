@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+    
 <html>
 <style>
 @font-face {
@@ -13,8 +15,35 @@ font-weight: normal;
 body {
     font-family: frutiger; margin: 0; background-color: white;
 }
-.hoofdbalk {
+#stationszoeker {
+    width: 99%;
+    font-size: 18px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border: 1px solid #000090;
+}
+#stationskeuze {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#stationskeuze li a {
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    display: block;
     background-color: #000090;
+}
+#stationskeuze li a:hover {
+background-color: #eee;
+color: black;
+}
+#titel {
+    padding-top: 10%;
+    background-color:purple;
+}
+#hoofdbalk {
+    background-color: purple;
     color: white;
     min-height: 4%;
     overflow: hidden;
@@ -32,46 +61,7 @@ body {
     padding: 0.2%;
     align-content: center;
 }
-.img1 {
-    background-image: url('img1.jpg');
-}
-.img2 {
-    background-image: url('img2.png');
-}
-.img3 {
-    background-image: url('img3.png');
-}
-.img4 {
-    background-image: url('img4.png');
-}
-.img5 {
-    background-image: url('img5.png');
-}
-.img6 {
-    background-image: url('img6.png');
-}
-.img7 {
-    background-image: url('img7.png');
-}
-.img8 {
-    background-image: url('img8.png');
-}
-.img9 {
-    background-image: url('img9.png');
-}
-.img10 {
-    background-image: url('img10.png');
-}
-.img11 {
-    background-image: url('img11.png');
-}
 select {
-    background-color: white;
-    font-family: frutiger;
-    text-align: center;
-    font-size: 20px;
-}
-button {
     background-color: white;
     font-family: frutiger;
     text-align: center;
@@ -94,97 +84,73 @@ h1 {
 .blok {
     background-color: rgba(255, 255, 255, 0.5);
 }
-.stationkiezer {
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-top: 10%;
+.blauw {
+    background-color: #000090;
+    color: white;
+}
+.border {
+    border-style: solid;
+    border-color: #000090;
 }
 .stationkiezerinhoud {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0.1%;
+    padding-left: 0%;
+    padding-top: 10%;
+    padding-right: 60%;
+    padding-bottom: 50%;
 }
 .onzichtbaar {
     display: none;
 }
 
 </style>
-<head>
-    <title>Waterstadse Spoorwegen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="hoofdbalk">
-    <img src="logo.png" class="logo">
-    <a>Reisplanner</a>
-    <a>Vertrektijden</a>
-    <a>Reisinformatie</a>
-    <a>Over ons</a>
+<body onload="stationsGenerator()">
+<div id="hoofdbalk">SNCF</div>
+<div class="stationkiezerinhoud border" style="background-color: #000090;">
+<h1>Bekijk de vertrektijden van een station:</h1>
+<input type="text" id="stationszoeker" onkeyup="stationsZoeker()" placeholder="Zoek een station..." title="Bekijk de vertrektijden van een station">
+<ul id="stationskeuze">
+</ul>
 </div>
-</head>
-<body class="img img11">
-<div class="titel" style="padding-top: 2%;"><a class="titeltekst">Veilig, gemakkelijk en snel door Waterstad.</a></div>
-<div class="titel" style="padding-top: 0.2%"><a class="titeltekst">Welkom bij de Waterstadse Spoorwegen!</a></div>
-<div class="stationkiezer"><div class="stationkiezerinhoud">
-    <h1>Bekijk de vertrektijden van een station:</h1>
-    <select id="stationskeuze" onchange="stationsKeuze()">
-        <option value="0">Selecteer een station</option>
-        <option value="1">Savannemeer</option>
-        <option value="2">Manege Centraal</option>
-        <option value="3">Gerritsertrog</option>
-        <option value="4">Ruijstunnels</option>
-        <option value="5">Manege West</option>
-        <option value="5">Manege Noord</option>
-        <option value="6">Waterstad Centraal</option>
-    </select>
-    <button id="Sm" class="knop onzichtbaar" onclick="document.location = 'Sm.html'">Bekijk</button>
-    <button id="Mc" class="knop onzichtbaar" onclick="document.location = 'Mc.html'">Bekijk</button>
-    <button id="Gt" class="knop onzichtbaar" onclick="document.location = 'Gt.html'">Bekijk</button>
-    <button id="Rt" class="knop onzichtbaar" onclick="document.location = 'Rt.html'">Bekijk</button>
-    <button id="Mw" class="knop onzichtbaar" onclick="document.location = 'Mw.html'">Bekijk</button>
-    <button id="Mn" class="knop onzichtbaar" onclick="document.location = 'Mn.html'">Bekijk</button>
-    <button id="Wc" class="knop onzichtbaar" onclick="document.location = 'Wc.html'">Bekijk</button>
-</div></div>
 </body>
 <script>
- var achtergrond = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11']
-        achterGrond(0);
-        function achterGrond(j) {
-            if (achtergrond.length > j) {
-             setTimeout(function() {
-                var i;
-                var elementen = document.getElementsByClassName('img')
-                for (i = 0; i < elementen.length; i++) {
-                elementen[i].classList.remove('img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11');
-                elementen[i].classList.add(achtergrond[j]);}
-                 achterGrond(++j);
-             }, 15000); // 1 second (in milliseconds)
-
-            } else if (achtergrond.length == j) { // Loop
-                achterGrond(0);
-            }}
-        function stationsKeuze() {
-            document.getElementById('Sm').classList.add('onzichtbaar')
-            document.getElementById('Mc').classList.add('onzichtbaar')
-            document.getElementById('Gt').classList.add('onzichtbaar')
-            document.getElementById('Rt').classList.add('onzichtbaar')
-            document.getElementById('Mw').classList.add('onzichtbaar')
-            document.getElementById('Mn').classList.add('onzichtbaar')
-            document.getElementById('Wc').classList.add('onzichtbaar')
-            var station = document.getElementById('stationskeuze')
-            var keuze = station.options[station.selectedIndex].text;
-                if (keuze == 'Savannemeer') {
-                document.getElementById('Sm').classList.remove('onzichtbaar')}
-                if (keuze == 'Manege Centraal') {
-                document.getElementById('Mc').classList.remove('onzichtbaar')}
-                if (keuze == 'Gerritsertrog') {
-                document.getElementById('Gt').classList.remove('onzichtbaar')}
-                if (keuze == 'Ruijstunnels') {
-                document.getElementById('Rt').classList.remove('onzichtbaar')}
-                if (keuze == 'Manege West') {
-                document.getElementById('Mw').classList.remove('onzichtbaar')}
-                if (keuze == 'Manege Noord') {
-                document.getElementById('Mn').classList.remove('onzichtbaar')}
-                if (keuze == 'Waterstad Centraal') {
-                document.getElementById('Wc').classList.remove('onzichtbaar')}
+    var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
+    var afkortingen = ["Ar", "Np", "Gv", "Gc", "Nn", "Cc", "Sp", "Mn", "Ns", "Gz", "Cm", "Po"]
+    function stationsGenerator() {
+        var s;
+        stations.sort();
+        afkortingen.sort();
+        for (s = 0; s < stations.length; s++) {
+            var element = document.createElement('li');
+            document.getElementById('stationskeuze').appendChild(element);
+            element.innerHTML = '<a href="http://' + window.location.host + "/FR/" + afkortingen[s] + '.html">' + stations[s] + "</a>" ;
+        }
+    
+    }
+    function stationsZoeker() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("stationszoeker");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("stationskeuze");
+        li = ul.getElementsByTagName("li");
+        for (s = 0; s < li.length; s++) {
+            a = li[s].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[s].style.display = "";
+            } else {
+                li[s].style.display = "none";
             }
+        }
+    }
+    function stationsKeuze() {
+    var station = document.getElementById('stationskeuze')
+    var keuze = station.options[station.selectedIndex].text;
+    var s;
+        for (s = 0; s < stations.length; s++) {
+            if (stations[s] == keuze) {
+                location.replace("http://" + window.location.host + "/FR/" + afkortingen[s] + ".html"); 
+            }}}
 
 </script>
 </html>

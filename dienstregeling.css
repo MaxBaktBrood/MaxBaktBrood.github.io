@@ -8,7 +8,21 @@
     src: url(Frutiger_bold.ttf);
     font-weight: normal;
 }
-body {font-family: frutiger; margin: 0; background-color: white;}
+body {font-family: frutiger; margin: 0; background-color: white; color: #000090;}
+.vervalt {
+    color: #9090dd;
+}
+.geheim {
+    color: white;
+
+}
+.importantbg {
+    background-color: #ffe785;
+}
+.streep {
+    color: #9090dd;
+    text-decoration: line-through;
+}
 .WG {
     font-size: 24;
     background-color: white;
@@ -19,6 +33,7 @@ body {font-family: frutiger; margin: 0; background-color: white;}
     font-size: 16;
     background-color: white;
     min-height: 22px;
+    
 }
 .BG {
     font-size: 24;
@@ -28,10 +43,16 @@ body {font-family: frutiger; margin: 0; background-color: white;}
     font-size: 16;
     background-color: #d5e5ff;
     min-height: 22px;
+    
+}
+.K {
+    font-size: 16;
+    min-height: 22px;
+    
 }
 .table {
     width: 100%;
-    color: #000090;
+    /*color: #000090;*/
     
 }
 .w1 {
@@ -86,15 +107,30 @@ body {font-family: frutiger; margin: 0; background-color: white;}
     /*width: 11.56%;*/
     width: 0%;
 }
+.wz5 {
+    /*width: 11.56%;*/
+    width: 0%;
+}
 .w6 {
+    /*width: 5%;*/
+    width: 0%;
+}
+.wz6 {
     /*width: 5%;*/
     width: 0%;
 }
 .wd1 {
     /*width: 10%;*/
     width: 14%;
-    color: #000090;
+    /*color: #000090;*/
     text-align: center;
+}
+.wdz1 {
+    /*width: 10%;*/
+    width: 14%;
+    /*color: #000090;*/
+    text-align: center;
+    color: #9090dd;
 }
 .wd2 {
     /*width: 60%;*/
@@ -109,18 +145,38 @@ body {font-family: frutiger; margin: 0; background-color: white;}
     /*width: 3.44%;*/
     width: 7%;
 }
+.wdz3 {
+    /*width: 3.44%;*/
+    width: 7%;
+    color: #9090dd;
+}
 .wd4 {
     /*width: 10%;*/
     width: 14%;
+}
+.wdz4 {
+    /*width: 10%;*/
+    width: 14%;
+    color: #9090dd;
 }
 .wd5 {
     /* width: 11.56%; */
     width: 0%;
 }
+.wdz5 {
+    /* width: 11.56%; */
+    width: 0%;
+    color: #9090dd;
+}
 .wd6 {
    /* width: 5%; */
     width: 0%;
 }
+.wdz6 {
+    /* width: 5%; */
+     width: 0%;
+     color: #9090dd;
+ }
 .important {
     background-color: #000090;
     color: white;
@@ -128,7 +184,10 @@ body {font-family: frutiger; margin: 0; background-color: white;}
 .none {
     color: #9090dd;
 }
-
+.oudebestemming {
+    color: #9090dd;
+    text-decoration: line-through;
+}
 .titel {
     font-size: 16;
     background-color: #000090;
@@ -171,6 +230,41 @@ body {font-family: frutiger; margin: 0; background-color: white;}
     top: 10px;
     border-style: solid;
     border-color: #000090;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+.geenspoor{
+    position: relative;
+    top: 10px;
+    border-style: solid;
+    border-color: #9090dd;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+.spoorrood{
+    position: relative;
+    top: 10px;
+    border-style: solid;
+    border-color: #d50000;
+    color: #d50000;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+.geenspoorrood{
+    position: relative;
+    top: 10px;
+    border-style: solid;
+    border-color: #d50000;
+    color: #9090dd;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 5px;

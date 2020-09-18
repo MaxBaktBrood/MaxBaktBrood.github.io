@@ -1,0 +1,74 @@
+function htmlMakerGV() {
+    var tijd = new Date();
+    var h = (tijd.getHours())
+    if (document.getElementById("stationsnaam").innerHTML == "Gendte Ville Bas") {
+        var xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var t;
+                var treinGegevens = JSON.parse(this.responseText);              //Verkrijg de inhoud van het document
+
+                for (t = 0; t < treinGegevens.treinen.length; t++) {
+                    function tabel(i) {
+                        if (i % 2 == 0) {i = "W"
+                        } else {i = "B"}
+                        return i;
+                   }
+                        var splitTussenstations = treinGegevens.treinen[t].tussenstations.split(", ")
+                        var spliceTussenstations = splitTussenstations.splice(splitTussenstations.length - 1, 0, "ens")
+                        var tussenstations2 = splitTussenstations.join(", ")
+                        var tussenstations = tussenstations2.split('s,').join("")
+                        if (treinGegevens.treinen[t].vertrekuur == h) {
+                            var kleur = t;
+                            var elementA = document.createElement('div');
+                            document.getElementById('contents').appendChild(elementA);
+                            elementA.className ="A A" + treinGegevens.treinen[t].vertrekminuut
+                            elementA.innerHTML = 
+                            '<table class="table ' + tabel(kleur) + 'G"><tr>' +
+                            '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
+                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                            '<td class="w3"><a class="spoor">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
+                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                            '<td class="w5"></td>' +
+                            '<td class="w6"></td>' +
+                            '</tr></table></div>'
+                            var elementB = document.createElement('div');
+                            document.getElementById('contents').appendChild(elementB);
+                            elementB.className ="B B" + treinGegevens.treinen[t].vertrekminuut
+                            elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
+                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + "via " + tussenstations + '</td>' +
+                            '<td class="wd3"></td>' +
+                            '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
+                            '<td class="wd5"></td>' +
+                            '<td class="wd6"></td>' +
+                            '</tr></table></div>'}
+                        if (treinGegevens.treinen[t].vertrekuur == h + 1) {
+                            var kleur = t;
+                            var elementA = document.createElement('div');
+                            document.getElementById('contents').appendChild(elementA);
+                            elementA.className ="A 2-A" + treinGegevens.treinen[t].vertrekminuut
+                            elementA.innerHTML = 
+                            '<table class="table ' + tabel(kleur) + 'G"><tr>' +
+                            '<td class="D' + treinGegevens.treinen[t].vertrekminuut + ' w1"><a class="2-h"></a>:' + treinGegevens.treinen[t].vertrekminuut + '</td>' +
+                            '<td class="w2">' + treinGegevens.treinen[t].bestemming + '</td>' +
+                            '<td class="w3"><a class="spoor">' + treinGegevens.treinen[t].vertrekspoor + '</a></td>' +
+                            '<td class="w4"><img src=""></img>' + treinGegevens.treinen[t].soort + '</td>' +
+                            '<td class="w5"></td>' +
+                            '<td class="w6"></td>' +
+                            '</tr></table></div>'
+                            var elementB = document.createElement('div');
+                            document.getElementById('contents').appendChild(elementB);
+                            elementB.className ="B 2-B" + treinGegevens.treinen[t].vertrekminuut
+                            elementB.innerHTML = '<table class="table ' + tabel(kleur) + 'K"><tr>' +
+                            '<td class="wd1">' + treinGegevens.treinen[t].vertraging + '</td>' +
+                            '<td class="C' + treinGegevens.treinen[t].vertrekminuut + ' wd2">' + "via " + tussenstations + '</td>' +
+                            '<td class="wd3"></td>' +
+                            '<td class="wd4">' + treinGegevens.treinen[t].storingsoorzaak + '</td>' +
+                            '<td class="wd5"></td>' +
+                            '<td class="wd6"></td>' +
+                            '</tr></table></div>'}
+                            }}}}
+
+    xmlhttp.open("GET", "http://localhost/FR/data/dienstregelingGv.json", true);
+    xmlhttp.send()}
