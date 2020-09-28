@@ -16,10 +16,11 @@ body {
     font-family: frutiger; margin: 0; background-color: white;
 }
 #stationszoeker {
-    width: 100%;
+    width: 99%;
     font-size: 18px;
-    padding: 11px;
-    border: 1px solid #dddddd;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border: 1px solid #000090;
 }
 #stationskeuze {
     list-style-type: none;
@@ -29,14 +30,20 @@ body {
 #stationskeuze li a {
     padding: 12px;
     text-decoration: none;
-    color: black;
+    color: white;
     display: block;
+    background-color: #000090;
 }
 #stationskeuze li a:hover {
 background-color: #eee;
+color: black;
 }
-.hoofdbalk {
-    background-color: #000090;
+#titel {
+    padding-top: 10%;
+    background-color:purple;
+}
+#hoofdbalk {
+    background-color: purple;
     color: white;
     min-height: 4%;
     overflow: hidden;
@@ -77,30 +84,35 @@ h1 {
 .blok {
     background-color: rgba(255, 255, 255, 0.5);
 }
-.stationkiezer {
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-top: 10%;
+.blauw {
+    background-color: #000090;
+    color: white;
+}
+.border {
+    border-style: solid;
+    border-color: #000090;
 }
 .stationkiezerinhoud {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0.1%;
+    padding-left: 0%;
+    padding-top: 10%;
+    padding-right: 60%;
+    padding-bottom: 50%;
 }
 .onzichtbaar {
     display: none;
 }
 
 </style>
-<body class="img img11" onload="stationsGenerator()">
-
-    <div class="titel" style="padding-top: 2%;"><a class="titeltekst"></a></div>
-    <div class="titel" style="padding-top: 0.2%"><a class="titeltekst"></a></div>
-    <div class="stationkiezer"><div class="stationkiezerinhoud">
-    <h1>Bekijk de vertrektijden van een station:</h1>
-    <input type="text" id="stationszoeker" onkeyup="stationsZoeker()" placeholder="Zoek een station..." title="Bekijk de vertrektijden van een station">
-    <ul id="stationskeuze">
-    </ul>
-
+<body onload="stationsGenerator()">
+<div id="hoofdbalk">SNCF</div>
+<div class="stationkiezerinhoud border" style="background-color: #000090;">
+<h1>Bekijk de vertrektijden van een station:</h1>
+<input type="text" id="stationszoeker" onkeyup="stationsZoeker()" placeholder="Zoek een station..." title="Bekijk de vertrektijden van een station">
+<ul id="stationskeuze">
+</ul>
+</div>
 </body>
 <script>
     var stations = ["Arrecour", "Nouveau Paris Central", "Gendte Ville Basse", "Gendte Central", "Nouveau Paris Nord", "Calais Châteauville", "Sudport", "Mer Nouveau", "Nouveau Paris Sud", "Générateur de Zombie", "Calais Midi", "Portail de l'Ouest"]
