@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html><head>
+<style>
+body {
+    font-family: 'Segoe UI';
+    margin: 0;
+    background-color: beige;
+    }
+.titelbalk {
+    background-color: green;
+    color: white;
+    overflow: hidden;
+    font-size: 40pt;
+    text-align: center;
+}
+.hoofdframe {
+    margin: 5%;
+    border-style: hidden;
+    border-width: 2px;
+    background-color: white;
+    border-radius: 8px;
+}
+.vak {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-style: solid;
+    border-color: black;
+    border-radius: 2px;
+    height: 200px;
+    overflow: scroll;
+
+}
+.optie {
+    border-style: hidden;
+    background-color:blue;
+    border-radius: 5px;
+    color: white;
+    margin: 2px;
+    font-weight: bold;
+    width: fit-content;
+    height: min-content;
+}
+#afspeelknop {
+    border-style: hidden;
+    background-color:green;
+    border-radius: 5px;
+    color: white;
+    margin: 20px;
+    font-weight: bold;
+    padding: 5px;
+
+}
+#audiospeler {
+    display: none;
+}
+</style>
+</head><body>
+<div class="titelbalk">Omroep Generator</div>
+<div class="hoofdframe">
+<h2>Welkom!</h1>
+<p>Dit is een omroepgenerator voor de omroepen van NS die tot en met 2020 op de Nederlandse stations te horen waren.</p>
+<p style="font-weight: bold;">Kies hier tekst uit!</p>
+<div id="optiesvak" class="vak" ondragover="staNeerzettenToe(event)" ondrop="zetNeer(event)">
+    <div class="optie" id="1" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Beste reizigers</div>
+    <div class="optie" id="2" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Dit is een testbericht</div>
+    <div class="optie" id="3" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">voor</div>
+    <div class="optie" id="4" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Henrico</div>
+    <div class="optie" id="5" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Door spoorproblemen in het binnenland</div>
+    <div class="optie" id="6" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">rijden er geen treinen</div>
+    <div class="optie" id="7" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">tussen</div>
+    <div class="optie" id="8" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">HenricoDDZ7507</div>
+    <div class="optie" id="9" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">en</div>
+    <div class="optie" id="10" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">StokstaartjeNLTrains</div>
+    <div class="optie" id="11" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">het is nog niet bekend hoe lang dit zal duren</div>
+    <div class="optie" id="12" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">er rijden stopbussen</div>
+    <div class="optie" id="13" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">TreinenRondZwolle</div>
+    <div class="optie" id="14" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">naar</div>
+    <div class="optie" id="15" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">MaxBaktBrood</div>
+    <div class="optie" id="16" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">deze vertrekken vanaf de speciale uitgang bij de toiletten</div>
+    <div class="optie" id="17" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">via</div>
+    <div class="optie" id="18" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">TreinspotterRotterdam</div>
+
+
+</div>
+<p style="font-weight: bold;">Sleep hier tekst heen!</p>
+<div id="selectievak" class="vak" ondragover="staNeerzettenToe(event)" ondrop="zetNeer(event)"></div>
+<button id="afspeelknop" onclick="afSpelen()">Speel de omroep af</button>
+</div>
+<div id="audiospeler"></div>
+
+</body>
+<script>
+    function staNeerzettenToe(gebeurtenis) {
+        gebeurtenis.preventDefault();
+    }
+    function staNeerzettenNietToe(gebeurtenis) {
+        gebeurtenis.stopPropagation()
+    }
+    function sleep(gebeurtenis) {
+        gebeurtenis.dataTransfer.setData('text', gebeurtenis.target.id);
+    }
+    function zetNeer(gebeurtenis) {
+        gebeurtenis.preventDefault();
+        var data = gebeurtenis.dataTransfer.getData("text")
+        var kopieVanElement = document.getElementById(data).cloneNode(true)
+        gebeurtenis.target.appendChild(kopieVanElement)
+    }
+    function volgendeAudio(x) {
+        i = x + 1;
+        id = String('bericht' + i);
+
+        if (document.getElementById(id) != undefined) {
+             var doel = document.getElementById(id);
+             doel.play()
+
+        }
+    }
+    function afSpelen() {
+        var opties = document.getElementById('selectievak').childNodes; 
+        console.log(document.getElementById('selectievak').childNodes[0].innerHTML)
+        omroepSamensteller = []
+        for (x = 0; x < opties.length; x++) {
+            var tekst = opties[x].innerHTML
+            var tekstAfspeler = String("<audio id=bericht" + x + " src='audio/"+ tekst + ".wav' onended='volgendeAudio(" + x + ");'></audio>")
+            omroepSamensteller.push(tekstAfspeler)
+        }
+        omroepBericht = omroepSamensteller.join('\n')
+        console.log(omroepSamensteller)
+        var audiospeler = document.getElementById('audiospeler');
+        var audioElement = document.createElement('div')
+        document.getElementById("audiospeler").appendChild(audioElement)
+        audioElement.innerHTML = "<audio src='audio/fluitje.mp3' autoplay onended='volgendeAudio(-1)'></audio>" + omroepBericht
+}
+</script>
+</html>
