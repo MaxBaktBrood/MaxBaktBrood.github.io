@@ -41,7 +41,7 @@ body {
     width: fit-content;
     height: min-content;
 }
-#afspeelknop {
+.afspeelknop {
     border-style: hidden;
     background-color:green;
     border-radius: 5px;
@@ -85,7 +85,8 @@ body {
 </div>
 <p style="font-weight: bold;">Sleep hier tekst heen!</p>
 <div id="selectievak" class="vak" ondragover="staNeerzettenToe(event)" ondrop="zetNeer(event)"></div>
-<div style='display: grid; grid-template-columns: auto auto auto;'><button id="afspeelknop" onclick="afSpelen()">Speel de omroep af</button> <button id="afspeelknop" href="https://maxbaktbrood.github.io/omroepgenerator/?voorbeeld">Speel de omroep af</button></div>
+<button id="afspeelknop" class="afspeelknop" onclick="afSpelen()">Speel de omroep af</button>
+<a href="https://maxbaktbrood.github.io/omroepgenerator/?voorbeeld" class="afspeelknop" style="font-size: 9pt;">Voorbeeld</a>
 
 </div>
 <div id="audiospeler"></div>
