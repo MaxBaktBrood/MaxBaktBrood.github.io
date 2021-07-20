@@ -55,7 +55,7 @@ body {
     display: none;
 }
 </style>
-</head><body>
+</head><body onload="tijdensHetLaden()">
 <div class="titelbalk">Omroep Generator</div>
 <div class="hoofdframe">
 <h2>Welkom!</h1>
@@ -85,12 +85,18 @@ body {
 </div>
 <p style="font-weight: bold;">Sleep hier tekst heen!</p>
 <div id="selectievak" class="vak" ondragover="staNeerzettenToe(event)" ondrop="zetNeer(event)"></div>
-<button id="afspeelknop" onclick="afSpelen()">Speel de omroep af</button>
+<div style='display: grid; grid-template-columns: auto auto auto;'><button id="afspeelknop" onclick="afSpelen()">Speel de omroep af</button> <button id="afspeelknop" href="https://maxbaktbrood.github.io/omroepgenerator/?voorbeeld">Speel de omroep af</button></div>
+
 </div>
 <div id="audiospeler"></div>
 
 </body>
 <script>
+    function tijdensHetLaden() {
+        if (window.location.href.endsWith('?voorbeeld') == true) {
+            document.getElementById("selectievak").innerHTML = ' <div class="optie" id="1" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Beste reizigers</div>    <div class="optie" id="2" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Dit is een testbericht</div>    <div class="optie" id="3" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">voor</div>    <div class="optie" id="4" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Henrico</div>    <div class="optie" id="5" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">Door spoorproblemen in het binnenland</div>    <div class="optie" id="6" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">rijden er geen treinen</div>    <div class="optie" id="7" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">tussen</div>    <div class="optie" id="8" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">HenricoDDZ7507</div>    <div class="optie" id="9" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">en</div>    <div class="optie" id="10" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">StokstaartjeNLTrains</div>    <div class="optie" id="11" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">het is nog niet bekend hoe lang dit zal duren</div>    <div class="optie" id="12" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">er rijden stopbussen</div>  <div class="optie" id="17" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">via</div>    <div class="optie" id="18" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">TreinspotterRotterdam</div>  <div class="optie" id="9" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">en</div> <div class="optie" id="13" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">TreinenRondZwolle</div>    <div class="optie" id="14" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">naar</div>    <div class="optie" id="15" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">MaxBaktBrood</div>    <div class="optie" id="16" ondragover="staNeerzettenNietToe(gebeurtenis)" draggable="true" ondragstart="sleep(event)">deze vertrekken vanaf de speciale uitgang bij de toiletten</div>   ' 
+        }
+    }
     function staNeerzettenToe(gebeurtenis) {
         gebeurtenis.preventDefault();
     }
@@ -114,7 +120,15 @@ body {
              var doel = document.getElementById(id);
              doel.play()
 
-        }
+        } else {
+                d = x + 2
+                volgendeId = String('bericht' + d)
+                if (document.getElementById(volgendeId) != undefined) {
+                    var doel = document.getElementById(volgendeId);
+                    doel.play()
+
+                }
+            }
     }
     function afSpelen() {
         var opties = document.getElementById('selectievak').childNodes; 
@@ -122,8 +136,12 @@ body {
         omroepSamensteller = []
         for (x = 0; x < opties.length; x++) {
             var tekst = opties[x].innerHTML
+            if (tekst != undefined) {
+                console.log(tekst)
             var tekstAfspeler = String("<audio id=bericht" + x + " src='audio/"+ tekst + ".wav' onended='volgendeAudio(" + x + ");'></audio>")
             omroepSamensteller.push(tekstAfspeler)
+            }
+
         }
         omroepBericht = omroepSamensteller.join('\n')
         console.log(omroepSamensteller)
